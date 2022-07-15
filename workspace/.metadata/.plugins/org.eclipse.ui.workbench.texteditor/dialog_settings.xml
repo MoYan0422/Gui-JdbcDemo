@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="270"/>
+		<item key="DIALOG_Y_ORIGIN" value="260"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="insertHospitalJPanel"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value=" main"/>
+			<item value="insertHospitalJPanel"/>
+			<item value="insertbuttonJPanel"/>
+			<item value="名稱 : "/>
+			<item value="insertHospitalJDialog"/>
+			<item value="insertOneJPanel"/>
+			<item value="insertMorejbutter"/>
+			<item value="defaultListModel"/>
+			<item value="openCoSqlConnection()"/>
+			<item value="date"/>
+			<item value="Label"/>
+			<item value="hospitalsCangeTOJlist"/>
+			<item value="closeSqlConnection"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="978"/>
+		<item key="DIALOG_Y_ORIGIN" value="279"/>
+		<item key="DIALOG_WIDTH" value="319"/>
+		<item key="DIALOG_HEIGHT" value="358"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI"/>
+	</section>
+</section>

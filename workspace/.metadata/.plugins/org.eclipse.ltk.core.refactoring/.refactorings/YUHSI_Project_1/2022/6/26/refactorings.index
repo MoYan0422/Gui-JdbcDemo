@@ -1,0 +1,5 @@
+1656170225125	Delete element
+1656170717297	Rename type 'UseJdbcInsert'
+1656170756087	Rename type 'SQLInsert'
+1656172497482	Extract local variable 'connection'
+1656172566053	Extract local variable 'status'

@@ -1,0 +1,260 @@
+package tw.Project_1.userJDialog;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+import tw.Project_1.fileHandling.DataReadingAndWriting;
+import tw.Project_1.fileHandling.MyFileFilter;
+import tw.Project_1.material.Hospital;
+import tw.Project_1.material.HospitalDao;
+
+public class SelectStringJDialog  extends JDialog{
+	
+	private JPanel jPanel;
+	private HospitalDao hospitalDao;
+	public SelectStringJDialog(HospitalDao hospitalDao){
+		super();
+		jPanel = new JPanel();
+		this.hospitalDao = hospitalDao;
+		Container container = this.getContentPane(); 
+		container.add(jPanel);
+		this.setResizable(true);	
+		this.setVisible(true);
+		this.setLocationRelativeTo(null);
+	}
+
+	public void selectJDialog(int width, int higjt, String string) {
+		// 創建彈窗
+		this.setLayout(new FlowLayout(1));
+		this.setSize(width, higjt);;
+		this.setVisible(true);
+		this.setLocationRelativeTo(null);
+		
+		
+		
+		jPanel.removeAll();
+		
+		
+		JLabel jLabel = new JLabel();
+		JPanel jLableJPanel = new JPanel();
+		
+		jLableJPanel.add(jLabel);
+		
+		
+		JButton jButton = new JButton("確定");
+		JPanel jButtonJPanel = new JPanel();
+		
+		jButtonJPanel.add(jButton);
+		
+		
+		jPanel.add(jLabel);
+		jPanel.add(jButton);
+		
+		
+		jButton.addActionListener((e) -> {
+			
+			dispose();
+		});
+			
+		
+		
+		
+		
+		
+	}
+
+	public void insertOneSubJDialog() {
+		jPanel.removeAll();
+		
+		
+		Border blackline = BorderFactory.createLineBorder(Color.gray);
+		//jPanel.setBorder(blackline);
+		this.setTitle("新增資料");
+		this.setLayout(new FlowLayout(1));
+		this.setSize(400, 340);
+		this.setVisible(true);
+		this.setLocationRelativeTo(null);
+		
+		
+		jPanel.setLayout(new FlowLayout(0));
+		jPanel.setPreferredSize(new Dimension(350, 250));
+		//
+		// ===================================================
+		// 名稱欄位
+		// ===================================================
+		JPanel nameJPanel = new JPanel();
+		nameJPanel.setLayout(new FlowLayout(0));
+		JLabel nemeJLabel = new JLabel("名稱 : ");
+		JTextField nameJTextField = new JTextField(15);
+		nameJPanel.add(nemeJLabel);
+		nameJPanel.add(nameJTextField);
+		//
+		// ===================================================
+		// 電話欄位
+		// ===================================================
+		JPanel phoneNumberJPanel = new JPanel();
+		phoneNumberJPanel.setLayout(new FlowLayout(0));
+		JLabel phoneNumberJLabel = new JLabel("電話 : ");
+		JTextField phoneNumberJTextField = new JTextField(10);
+		phoneNumberJPanel.add(phoneNumberJLabel);
+		phoneNumberJPanel.add(phoneNumberJTextField);
+		//
+		// ===================================================
+		// 地區欄位
+		// ===================================================
+		JPanel distJPanel = new JPanel();
+		distJPanel.setLayout(new FlowLayout(0));
+		//縣市欄位
+		JLabel cityLabel = new JLabel("縣市 : ");
+		JComboBox<String> cityComboBox = cityLabel();
+		cityComboBox.setSelectedIndex(-1);
+		
+		//地區欄位
+		JLabel distLabel = new JLabel("    地區 : ");
+		JComboBox<String> distComboBox = new JComboBox<String>();
+		distComboBox.addItem("請先選縣市");
+		distComboBox.setSelectedIndex(-1);
+
+		cityComboBox.addActionListener((e) -> {
+			distComboBox.removeAllItems();
+			String cityString = (String) cityComboBox.getSelectedItem();
+			try {
+				List<String> selectDLists = hospitalDao.selectDLists(cityString);
+				for (String distName : selectDLists) {
+					distComboBox.addItem(distName);
+				}
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+		distJPanel.add(cityLabel);
+		distJPanel.add(cityComboBox);
+		distJPanel.add(distLabel);
+		distJPanel.add(distComboBox);
+		//
+		// ===================================================
+		// 地址欄位
+		// ===================================================
+		JPanel addressJPanel = new JPanel();
+		addressJPanel.setLayout(new FlowLayout(0));
+		JLabel addressJLabel = new JLabel("地址 : ");
+		JTextField addressJTextField = new JTextField(25);
+		addressJPanel.add(addressJLabel);
+		addressJPanel.add(addressJTextField);
+		//
+		// ===================================================
+		// 按鍵欄位
+		// ===================================================
+		JPanel insertOneJPanel = new JPanel();
+		insertOneJPanel.setLayout(new FlowLayout(0));
+		insertOneJPanel.setPreferredSize(new Dimension(300, 40));
+		JButton insertOnejButton = new JButton("新增資料");
+		insertOnejButton.addActionListener((e)->{
+			Hospital hospital = new Hospital();
+			String cituNameString = (String)cityComboBox.getSelectedItem();
+			String distnameString =	(String)distComboBox.getSelectedItem();
+			hospital.setCity(cituNameString);
+			hospital.setDist(distnameString);
+			hospital.setHospitalName(nameJTextField.getText());
+			hospital.setAddr(cituNameString+distnameString+addressJTextField.getText());
+			hospital.setTelephoneNumber(phoneNumberJTextField.getText());
+		try {
+			int sqlAddHospital = hospitalDao.sqlAddHospital(hospital);
+			if(sqlAddHospital == 0 ) {
+				this.selectJDialog(250, 250, "加入失敗");
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		});
+		insertOneJPanel.add(insertOnejButton);
+		//
+		// ===================================================
+		// 按鍵欄位
+		// ===================================================
+		JPanel insertMoreJPanel = new JPanel();
+		insertMoreJPanel.setLayout(new FlowLayout(0));
+		insertMoreJPanel.setPreferredSize(new Dimension(300, 40));
+		JButton insertMorejbutter = new JButton("新增多筆資料");
+		insertMorejbutter.addActionListener((e) -> {
+			JFileChooser jFileChooser = new JFileChooser();
+			MyFileFilter myFileFilter = new MyFileFilter();
+			jFileChooser.setAcceptAllFileFilterUsed(false);
+			jFileChooser.addChoosableFileFilter(myFileFilter);
+			jFileChooser.showSaveDialog(null);
+			File file = jFileChooser.getSelectedFile();
+			if (file != null) {
+				DataReadingAndWriting dataReadingAndWriting = new DataReadingAndWriting();
+				try {
+					dataReadingAndWriting.insertDataForReadFile(file);
+				} catch (SQLException | IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+			}
+
+		});
+		insertMoreJPanel.add(insertMorejbutter);
+
+		jPanel.add(nameJPanel);
+		jPanel.add(phoneNumberJPanel);
+		jPanel.add(distJPanel);
+		jPanel.add(addressJPanel);
+		jPanel.add(insertOneJPanel);
+		jPanel.add(insertMoreJPanel);
+		
+		
+	}
+		
+
+	private JComboBox<String> cityLabel() {
+		JComboBox<String> cityComboBox = new JComboBox<String>();
+
+		cityComboBox.addItem("臺北市");
+		cityComboBox.addItem("新北市");
+		cityComboBox.addItem("基隆市");
+		cityComboBox.addItem("桃園縣");
+		cityComboBox.addItem("新竹市");
+		cityComboBox.addItem("新竹縣");
+		cityComboBox.addItem("宜蘭縣");
+		cityComboBox.addItem("苗栗縣");
+		cityComboBox.addItem("臺中市");
+		cityComboBox.addItem("彰化縣");
+		cityComboBox.addItem("南投縣");
+		cityComboBox.addItem("雲林縣");
+		cityComboBox.addItem("嘉義市");
+		cityComboBox.addItem("嘉義縣");
+		cityComboBox.addItem("臺南市");
+		cityComboBox.addItem("高雄市");
+		cityComboBox.addItem("屏東縣");
+		cityComboBox.addItem("臺東縣");
+		cityComboBox.addItem("花蓮縣");
+		cityComboBox.addItem("澎湖縣");
+		cityComboBox.addItem("連江縣");
+		cityComboBox.addItem("金門縣");
+		return cityComboBox;
+	}
+
+}

@@ -1,0 +1,48 @@
+package tw.Project_1.action;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import tw.Project_1.material.Hospital;
+import tw.Project_1.material.HospitalDao;
+import tw.Project_1.material.fileHandling.DataReadingAndWriting;
+import tw.Project_1.userFarm.UserFrame;
+
+public class UseSwing {
+
+
+    public static void main(String[] args) throws SQLException, IOException {
+        // 显示应用 GUI
+     
+    	UserFrame userFrame = new UserFrame();
+    	
+    	//JTextField username = new JTextField(10);
+    	//JTextField password = new JPasswordField(100);
+    	//Object[] message = {
+    	//    "Username:", username,
+    	//    "Password:", password
+    	//};
+        //
+    	//int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+    	//if (option == JOptionPane.OK_OPTION) {
+    	//    if (username.getText().equals("h") && password.getText().equals("h")) {
+    	//        System.out.println("Login successful");
+    	//    } else {
+    	//        System.out.println("login failed");
+    	//    }
+    	//} else {
+    	//    System.out.println("Login canceled");
+    	//}
+    	
+    	//selectHospitals = hospitalDao.selectHospitals("吉祥診所");
+    	//userFrame.visible.hospitalsCangeTOJlist(selectHospitals);
+    
+    }
+}

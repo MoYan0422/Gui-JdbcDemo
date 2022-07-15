@@ -1,0 +1,29 @@
+package tw.Project_1.userFarm;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import tw.Project_1.fileHandling.DataReadingAndWriting;
+import tw.Project_1.material.Hospital;
+import tw.Project_1.material.HospitalDao;
+import tw.Project_1.userFarm.UserFrame;
+
+public class UseSwing {
+
+
+    public static void main(String[] args) throws SQLException, IOException {
+        // 显示应用 GUI
+     
+    	UserFrame userFrame = new UserFrame();
+    	
+    	
+    	
+    	//selectHospitals = hospitalDao.selectHospitals("吉祥診所");
+    	//userFrame.visible.hospitalsCangeTOJlist(selectHospitals);
+    
+    }
+}

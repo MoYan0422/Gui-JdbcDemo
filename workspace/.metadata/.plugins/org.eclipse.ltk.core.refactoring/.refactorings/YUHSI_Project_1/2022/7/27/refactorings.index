@@ -1,0 +1,91 @@
+1656638522218	Extract local variable 'jDialog'
+1656638639418	Extract local variable 'jLabel'
+1656638698633	Extract local variable 'jTextField'
+1656639319537	Extract local variable 'jPanel'
+1656641718255	Rename local variable 'nameJPanel'
+1656642156347	Rename method 'updateJDialog'
+1656642168766	Rename local variable 'insertDateButton'
+1656642190081	Rename local variable 'deleteDateButton'
+1656653519044	Extract local variable 'selectedItem'
+1656654044770	Extract local variable 'dists'
+1656654159712	Extract local variable 'selectDLists'
+1656657270903	Extract local variable 'selectHospitals'
+1656658272547	Extract local variable 'save'
+1656659743772	Extract local variable 'prepareStatement'
+1656661121136	Extract local variable 'listSelectionListeners'
+1656661310403	Rename method 'atLeastOnmDialog'
+1656668956891	Extract local variable 'selectedItem'
+1656675652570	Rename method 'keyWordNullPanel'
+1656675893505	Rename method 'keyWordpPanelForDist'
+1656675912783	Rename method 'keyWordPanelForName'
+1656675936775	Rename method 'kePanelNamePanel'
+1656680303793	Extract local variable 'jbutter'
+1656680567361	Extract local variable 'insertJLabel'
+1656681768666	Rename local variable 'butterJPanel'
+1656683147141	Extract local variable 'visibleJpanel'
+1656683224095	Extract local variable 'createJPanel'
+1656684920703	Extract local variable 'jFileChooser'
+1656686226700	Extract local variable 'myFileFilter'
+1656686531053	Extract local variable 'file'
+1656686882297	Rename method 'addHospitalForCsv'
+1656686900856	Rename method 'addHospitalForJson'
+1656687511012	Extract local variable 'dataReadingAndWriting'
+1656687595823	Rename method 'flieReader'
+1656687646906	Rename method 'readFileAndAddData'
+1656687670525	Rename method 'insertDataReadFile'
+1656688723878	Extract local variable 'jPanel'
+1656688787587	Extract local variable 'jLabel'
+1656688843243	Extract local variable 'jTextField'
+1656689428958	Rename local variable 'NameJPanel'
+1656689942652	Extract local variable 'jButton'
+1656691743687	Extract local variable 'jPanel'
+1656727826575	Extract local variable 'hospital'
+1656729953278	Rename local variable 'buttenJPanel'
+1656729980311	Rename local variable 'jButton'
+1656731358604	Delete element
+1656734739411	Extract local variable 'jPanel'
+1656734966587	Extract local variable 'jLableJPanel'
+1656735584954	Extract local variable 'sqlAddHospital'
+1656736524178	Move compilation unit
+1656736530622	Move compilation unit
+1656736612674	Move compilation unit
+1656736617574	Move compilation unit
+1656736631644	Delete element
+1656736694268	Move compilation unit
+1656736695629	Move compilation unit
+1656736701016	Move compilation unit
+1656740565915	Rename method 'insertOneSubJDialog'
+1656741225765	Move compilation unit
+1656741230605	Delete element
+1656741251211	Move compilation unit
+1656741253409	Move compilation unit
+1656741260304	Delete element
+1656741305728	Move compilation unit
+1656741309384	Move compilation unit
+1656741313381	Delete element
+1656749206461	Delete element
+1656749213303	Delete element
+1656750061715	Extract local variable 'distJPanel2'
+1656750395773	Extract local variable 'distJPanel'
+1656751681800	Extract local variable 'distComboBox'
+1656751700965	Extract local variable 'cityComboBox'
+1656753344870	Extract local variable 'jDialog'
+1656753989301	Extract local variable 'jDialog'
+1656754013188	Extract local variable 'jPanel'
+1656754739877	Rename local variable 'jPanel'
+1656760264863	Delete element
+1656760454157	Extract local variable 'dist'
+1656760551304	Rename type 'DistJPanel'
+1656760886072	Extract local variable 'regionSelectionForm'
+1656760930362	Extract local variable 'cityComboBox'
+1656760942453	Extract local variable 'distComboBox'
+1656766408242	Extract local variable 'size'
+1656768340973	Rename method 'insertMoreJPanel'
+1656768378829	Extract local variable 'listSelectionListeners'
+1656769571680	Extract local variable 'selectedValuesList'
+1656772725075	Extract local variable 'jDialog'
+1656773071926	Extract local variable 'distJPanel'
+1656773586853	Extract local variable 'updataJPanel'
+1656775797452	Extract local variable 'linkedList'
+1656776382019	Extract local variable 'yesOrNo'
+1656778475821	Extract local variable 'linkedList'
